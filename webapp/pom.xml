@@ -1,93 +1,142 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.devdev</groupId>
-    <artifactId>webapp</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+	<groupId>net.devdev</groupId>
+	<artifactId>webapp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 
-    <name>webapp</name>
+	<name>webapp</name>
 
-    <properties>
-        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+	<properties>
+		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<deltaspike.version>0.6</deltaspike.version>
+	</properties>
+	<repositories>
+		<repository>
+			<id>mvnrepo</id>
+			<url>http://mvnrepository.com/</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-all</artifactId>
+			<version>1.2.3</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit-dep</artifactId>
+			<version>4.11</version>
+			<type>pom</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.openjpa</groupId>
+			<artifactId>openjpa-all</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.deltaspike.core</groupId>
+		    <artifactId>deltaspike-core-api</artifactId>
+		    <version>${deltaspike.version}</version>
+		    <scope>compile</scope>
+		</dependency>
 
-    <dependencies>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>6.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-        	<groupId>org.apache.openjpa</groupId>
-        	<artifactId>apache-openjpa</artifactId>
-        	<version>2.3.0</version>
-        	<type>pom</type>
-        </dependency>
-        <dependency>
-        	<groupId>org.apache.shiro</groupId>
-        	<artifactId>shiro-all</artifactId>
-        	<version>1.2.3</version>
-        </dependency>
-        <dependency>
-        	<groupId>junit</groupId>
-        	<artifactId>junit-dep</artifactId>
-        	<version>4.11</version>
-        	<type>pom</type>
-        </dependency>
-    </dependencies>
+		<dependency>
+		    <groupId>org.apache.deltaspike.core</groupId>
+		    <artifactId>deltaspike-core-impl</artifactId>
+		    <version>${deltaspike.version}</version>
+		    <scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces</groupId>
+			<artifactId>myfaces</artifactId>
+			<version>15</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-bundle</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.tobago</groupId>
+			<artifactId>tobago</artifactId>
+			<version>2.0.0-beta-2</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.ode</groupId>
+			<artifactId>apache-ode</artifactId>
+			<version>1.3.6</version>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.tobago</groupId>
+			<artifactId>tobago-taglib-extension</artifactId>
+			<version>1.6.0-beta-2</version>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <compilerArguments>
-                        <endorseddirs>${endorsed.dir}</endorseddirs>
-                    </compilerArguments>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
-                <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-<!--                 <version>2.1</version> -->
-                <executions>
-                    <execution>
-<!--                         <phase>validate</phase> -->
-<!--                         <goals> -->
-<!--                             <goal>copy</goal> -->
-<!--                         </goals> -->
-                        <configuration>
-                            <outputDirectory>${endorsed.dir}</outputDirectory>
-                            <silent>true</silent>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>javax</groupId>
-                                    <artifactId>javaee-endorsed-api</artifactId>
-                                    <version>6.0</version>
-                                    <type>jar</type>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<compilerArguments>
+						<endorseddirs>${endorsed.dir}</endorseddirs>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<!-- <version>2.1</version> -->
+				<executions>
+					<execution>
+						<!-- <phase>validate</phase> -->
+						<!-- <goals> -->
+						<!-- <goal>copy</goal> -->
+						<!-- </goals> -->
+						<configuration>
+							<outputDirectory>${endorsed.dir}</outputDirectory>
+							<silent>true</silent>
+							<artifactItems>
+								<artifactItem>
+									<groupId>javax</groupId>
+									<artifactId>javaee-endorsed-api</artifactId>
+									<version>6.0</version>
+									<type>jar</type>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
