@@ -12,7 +12,6 @@
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<deltaspike.version>0.6</deltaspike.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -22,70 +21,109 @@
 	</repositories>
 	<dependencies>
 		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit-dep</artifactId>
+			<version>4.11</version>
+		</dependency>
+		
+		
+
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-bundle</artifactId>
+			<version>2.2.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.taglibs</groupId>
+			<artifactId>taglibs-standard</artifactId>
+			<version>1.2.1</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.tobago</groupId>
+			<artifactId>tobago-core</artifactId>
+			<version>2.0.0-beta-2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.0-rc1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>oro</groupId>
+			<artifactId>oro</artifactId>
+			<version>2.0.8</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xmlParserAPIs</artifactId>
+			<version>2.6.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jasper-el</artifactId>
+			<version>7.0.53</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.tomahawk</groupId>
+			<artifactId>tomahawk20</artifactId>
+			<version>1.1.14</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
 			<version>6.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-all</artifactId>
-			<version>1.2.3</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit-dep</artifactId>
-			<version>4.11</version>
-			<type>pom</type>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.apache.openjpa</groupId>
-			<artifactId>openjpa-all</artifactId>
-			<version>2.3.0</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.apache.deltaspike.core</groupId>
-		    <artifactId>deltaspike-core-api</artifactId>
-		    <version>${deltaspike.version}</version>
-		    <scope>compile</scope>
-		</dependency>
-
-		<dependency>
-		    <groupId>org.apache.deltaspike.core</groupId>
-		    <artifactId>deltaspike-core-impl</artifactId>
-		    <version>${deltaspike.version}</version>
-		    <scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.myfaces</groupId>
-			<artifactId>myfaces</artifactId>
-			<version>15</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.myfaces.core</groupId>
-			<artifactId>myfaces-bundle</artifactId>
-			<version>2.2.2</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.myfaces.tobago</groupId>
-			<artifactId>tobago</artifactId>
+			<artifactId>tobago-extension</artifactId>
 			<version>2.0.0-beta-2</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.ode</groupId>
-			<artifactId>apache-ode</artifactId>
-			<version>1.3.6</version>
-			<type>zip</type>
+			<groupId>org.apache.myfaces.tobago</groupId>
+			<artifactId>tobago-sandbox</artifactId>
+			<version>2.0.0-beta-2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.myfaces.tobago</groupId>
-			<artifactId>tobago-taglib-extension</artifactId>
-			<version>1.6.0-beta-2</version>
+			<artifactId>tobago-fileupload</artifactId>
+			<version>2.0.0-beta-2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.tobago</groupId>
+			<artifactId>tobago-security</artifactId>
+			<version>2.0.0-beta-2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.tobago</groupId>
+			<artifactId>tobago-theme</artifactId>
+			<version>2.0.0-beta-2</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.tobago</groupId>
+			<artifactId>tobago-tool-apt</artifactId>
+			<version>2.0.0-beta-2</version>
 		</dependency>
 	</dependencies>
 
