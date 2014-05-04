@@ -8,7 +8,7 @@
   <name>devdev</name>
   <modules>
   	<module>../model</module>
-  	<module>../persistent</module>
-  	<module>../webapp</module>
+  	<module>../services</module>
+  	<module>../ui</module>
   </modules>
 </project>
